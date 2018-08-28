@@ -8,6 +8,10 @@ router.get('/', (req,res,next) => {
     .then(books => {
         res.json({books})
     })
+    // queries.listBooks()
+    // .then(books => {
+    //     res.json({books});
+    // });
 })
 
 // router.get('/:id', function(request,response){

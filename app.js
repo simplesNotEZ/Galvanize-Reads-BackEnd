@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/books", books);
-// app.use("/authors", authors);
+app.use("/authors", authors);
 
 app.listen(port, () => {
     console.log(`I'm listening on ${port}`);
