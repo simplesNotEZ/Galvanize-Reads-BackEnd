@@ -3,7 +3,13 @@ const database = require("./database-connection")
 module.exports = {
     list(tableName) {
         return database(tableName).select();
-    }//,
+    },
+    listBooks() {
+        return database('books')
+        .select('book_title', 'book_genre', 'book_description', 'book_cover_url', 'author_id', 'first_name', 'last_name', 'biography', 'portrait_url')
+        .innerJoin('author_book', 'books.id', '=', 'author_book.book_id')
+        .innerJoin('authors', 'authors.id', '=', 'author_book.book_id');
+    }
     // listBooks() {
     //     return database('books')
     //     .leftOuterJoin('books.authorId1', '=', 'au1.id')

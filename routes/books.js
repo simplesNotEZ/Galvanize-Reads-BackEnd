@@ -4,14 +4,14 @@ const router = express.Router()
 const queries = require("../db/queries")
 
 router.get('/', (req,res,next) => {
-    queries.list('books')
-    .then(books => {
-        res.json({books})
-    })
-    // queries.listBooks()
+    // queries.list('books')
     // .then(books => {
-    //     res.json({books});
-    // });
+    //     res.json({books})
+    // })
+    queries.listBooks()
+    .then(books => {
+        res.json({books});
+    });
 })
 
 // router.get('/:id', function(request,response){
